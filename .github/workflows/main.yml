@@ -39,6 +39,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          VITE_GIPHY_API_KEY: ${{ secrets.VITE_GIPHY_API_KEY }}
+          VITE_APP_TITLE: ${{ secrets.VITE_APP_TITLE }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
