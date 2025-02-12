@@ -22,14 +22,14 @@ export const AddCategory = ({onAddCategories}: Props) => {
       className="flex flex-col md:flex-row gap-4"
       onSubmit={onSubmit}>
       <input
-        className="bg-white rounded-lg border border-gray-800 text-black text-md px-4 py-2 outline-0 grow"
+        className="bg-teal-50 rounded-lg border border-teal-900 text-teal-900 text-md px-4 py-2 outline-0 grow"
         onChange={onInputChange}
         value={value}
         name="search"
         type="text"
         placeholder="Buscar un gif"/>
       <button
-        className="border border-blue-700 bg-blue-100 rounded-lg px-4 py-2"
+        className="border border-teal-900 bg-teal-900 text-teal-50 rounded-lg px-4 py-2"
         type="submit">
         Add category
       </button>

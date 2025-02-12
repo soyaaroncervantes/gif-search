@@ -14,7 +14,7 @@ export const GifExpertApp = () => {
   return (
     <main className="@container flex flex-col gap-8">
       <div className="flex flex-col gap-4">
-        <h1 className="text-4xl font-light">Gif Search app</h1>
+        <h1 className="text-4xl font-light text-teal-950">Giphy Search</h1>
         <AddCategory onAddCategories={onSubmit}/>
       </div>
       {categories.map(category => <GitGrid key={category} category={category}/>)}

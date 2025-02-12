@@ -9,8 +9,8 @@ export const GitGridItem = ({title, images: {original: image}}: GifModel) => {
         height={image.height}
         src={image.url}
         alt={title}/>
-      <div className="col-start-1 row-start-1 self-end bg-gray-900 opacity-90 rounded-lg">
-        <p className="text-sm italic p-2 text-white opacity-100">{title}</p>
+      <div className="col-start-1 row-start-1 self-end bg-teal-950 opacity-90 rounded-lg">
+        <p className="text-sm italic p-2 text-teal-50 opacity-100">{title}</p>
       </div>
     </article>
   );
