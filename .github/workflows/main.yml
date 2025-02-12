@@ -33,12 +33,15 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 22
+      - name: Set up PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Build
-        run: npm run build
+        run: pnpm run build
         env:
           VITE_GIPHY_API_KEY: ${{ secrets.VITE_GIPHY_API_KEY }}
           VITE_APP_TITLE: ${{ secrets.VITE_APP_TITLE }}
