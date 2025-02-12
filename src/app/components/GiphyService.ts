@@ -4,7 +4,7 @@ import {GifSearchModel} from "../mapper/giphy.model.ts";
 
 const urlString = `https://api.giphy.com/v1/gifs/search`
 const url = new URL(urlString);
-const apiKey = import.meta.env.GIPHY_API_KEY;
+const apiKey = import.meta.env.VITE_GIPHY_API_KEY;
 
 export const fetchGifs = async (category: string) => {
   url.searchParams.set('api_key', apiKey);
