@@ -8,7 +8,7 @@ import {
   GifSearchModel,
   ImageFixedDownsampledModel,
   ImageFixedModel,
-  ImageFixedStillModel,
+  ImageStillModel,
   ImageModel,
   LoopingImageModel,
   MetaModel,
@@ -79,7 +79,13 @@ function createImageMetadata() {
   PojosMetadataMap.create<OriginalImageDto>('OriginalImageDto', {
     url: String,
     width: String,
-    height: String
+    height: String,
+    size: String,
+    frames: String,
+    mp4: String,
+    mp4_size: String,
+    webp: String,
+    webp_size: String,
   });
   PojosMetadataMap.create<LoopingImageDto>('LoopingImageDto', {
     mp4: String,
@@ -113,7 +119,7 @@ function createImageMetadata() {
   });
   /// endregion
   /// region Image Models
-  PojosMetadataMap.create<ImageFixedStillModel>('ImageFixedStillModel', {
+  PojosMetadataMap.create<ImageStillModel>('ImageFixedStillModel', {
     url: String,
     width: Number,
     height: Number,
@@ -155,7 +161,13 @@ function createImageMetadata() {
   PojosMetadataMap.create<OriginalImageModel>('OriginalImageModel', {
     url: String,
     width: String,
-    height: String
+    height: String,
+    size: String,
+    frames: String,
+    mp4: String,
+    mp4_size: String,
+    webp: String,
+    webp_size: String,
   });
   PojosMetadataMap.create<LoopingImageModel>('LoopingImageModel', {
     mp4: String,
@@ -295,7 +307,7 @@ export function createGiphyMetadata() {
 }
 
 export const giphyMapperProfile: MappingProfile = (mapper) => {
-  createMap<ImageFixedStillDto, ImageFixedStillModel>(mapper, 'ImageFixedStillDto', 'ImageFixedStillModel');
+  createMap<ImageFixedStillDto, ImageStillModel>(mapper, 'ImageFixedStillDto', 'ImageFixedStillModel');
   createMap<ImageFixedDto, ImageFixedModel>(mapper, 'ImageFixedDto', 'ImageFixedModel');
   createMap<ImageFixedDownsampledDto, ImageFixedDownsampledModel>(mapper, 'ImageFixedDownsampledDto', 'ImageFixedDownsampledModel');
   createMap<DownsizedDto, DownsizedModel>(mapper, 'DownsizedDto', 'DownsizedModel');

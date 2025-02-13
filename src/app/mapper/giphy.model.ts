@@ -54,12 +54,18 @@ export interface UserModel {
   readonly display_name: string;
 }
 
-export interface ImageFixedStillModel {
+export interface ImageStillModel {
   url: string;
   width: number;
   height: number;
 }
-export interface ImageFixedModel extends ImageFixedStillModel {
+export interface OriginalStillModel {
+  url: string;
+  width: number;
+  height: number;
+}
+
+export interface ImageFixedModel extends ImageStillModel {
   size: string;
   mp4: string;
   mp4_size: string;
@@ -70,16 +76,25 @@ export interface ImageFixedDownsampledModel extends ImageFixedModel {
   size: string;
   webp_size: string;
 }
-export interface DownsizedModel extends ImageFixedStillModel {
+export interface DownsizedModel extends ImageStillModel {
   size: string;
 }
-export interface DownsizedSmallModel extends ImageFixedStillModel {
+export interface DownsizedSmallModel extends ImageStillModel {
   mp4_size: string;
 }
 //eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface DownsizedStillModel extends ImageFixedStillModel {}
-//eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface OriginalImageModel extends ImageFixedStillModel {}
+export interface DownsizedStillModel extends ImageStillModel {}
+export interface OriginalImageModel {
+  width: number;
+  height: number;
+  size: string;
+  frames: string;
+  url: string;
+  mp4: string;
+  mp4_size: string;
+  webp: string;
+  webp_size: string;
+}
 export interface LoopingImageModel {
   mp4: string;
 }
@@ -91,22 +106,23 @@ export interface PreviewImageModel {
 }
 export interface ImageModel {
   fixed_height: ImageFixedModel,
-  fixed_height_still: ImageFixedStillModel,
+  fixed_height_still: ImageStillModel,
   fixed_height_downsampled: ImageFixedDownsampledModel,
   fixed_width: ImageFixedModel,
-  fixed_width_still: ImageFixedStillModel,
+  fixed_width_still: ImageStillModel,
   fixed_width_downsampled: ImageFixedDownsampledModel,
   fixed_height_small: ImageFixedModel,
-  fixed_height_small_still: ImageFixedStillModel,
+  fixed_height_small_still: ImageStillModel,
   fixed_width_small: ImageFixedModel,
-  fixed_width_small_still: ImageFixedStillModel,
+  fixed_width_small_still: ImageStillModel,
   downsized: DownsizedModel,
   downsized_still: DownsizedStillModel,
   downsized_large: DownsizedModel,
   downsized_medium: DownsizedModel,
   downsized_small: DownsizedSmallModel,
   original: OriginalImageModel,
+  original_still: OriginalStillModel,
   looping: LoopingImageModel,
   preview: PreviewImageModel,
-  preview_gif: ImageFixedStillModel,
+  preview_gif: ImageStillModel,
 }

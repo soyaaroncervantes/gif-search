@@ -84,9 +84,22 @@ export interface DownsizedSmallDto extends ImageFixedStillDto{
 //eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface DownsizedStillDto extends ImageFixedStillDto {}
 
-//eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface OriginalImageDto extends ImageFixedStillDto {}
-
+export interface OriginalImageDto {
+  width: number;
+  height: number;
+  size: string;
+  frames: string;
+  url: string;
+  mp4: string;
+  mp4_size: string;
+  webp: string;
+  webp_size: string;
+}
+export interface OriginalStillDto {
+  url: string;
+  width: number;
+  height: number;
+}
 export interface LoopingImageDto {
   mp4: string;
 }
@@ -115,6 +128,7 @@ export interface ImageDto {
   downsized_medium: DownsizedDto,
   downsized_small: DownsizedSmallDto,
   original: OriginalImageDto,
+  original_still: OriginalStillDto,
   looping: LoopingImageDto,
   preview: PreviewImageDto,
   preview_gif: ImageFixedStillDto,
